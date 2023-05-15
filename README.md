@@ -121,4 +121,4 @@ The ideas for this experiment were developed jointly with [Kangwook Lee (UW-Madi
 We'll be likely running more tests based on and around the LRT, and we may (or may not) update this in near the future.
 
 # Disclaimer: 
-The LRT is not supposed to test extensively the reasoning and retrieval capabilities for language models, nor do we suggest this as a replacement for more comprehensive test. It is a simple test that perhaps tells us more about a model when it performs poorly at it, rather than a model that performs great at it (in fact it is likely that a small language model can be trained to only do this successfully).
+The LRT is not supposed to test extensively the reasoning and retrieval capabilities for language models, nor do we suggest this as a replacement for more comprehensive tests and evaluations. It is a simple test that perhaps tells us more about a model when it performs poorly at it, rather than a model that performs great at it (in fact it is likely that a small language model can be trained to only do this successfully). 
