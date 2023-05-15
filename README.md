@@ -8,7 +8,7 @@ This experiment aims to investigate the recall abilities of language models (bey
 
 At the core of this experiment, we're interested in assessing how well the models can retrieve specific pieces of information from random parts of a long text. We don't claim that this is reflective of real-world tasks, but it will be a fun test to try out.
 
-## Experiment Design
+# Experiment Design
 
 To test a model's retrival capabilities, we generate long sequences of text where each line contains a piece of information ("REGISTER_CONTENT") and a unique identifier. At a random point in the text, we insert an instruction that needs to be executed. That instruction request the model to "go to" a specic (randomly selected) line of the context, and report the contents of that line.
 
@@ -69,14 +69,14 @@ line 2: REGISTER_CONTENT is <18859>
 line 5: REGISTER_CONTENT is <36058>
 ```
 
-## Experiment Procedure
+# Experiment Procedure and Results
 
 For each test, the model is provided with the generated text file's content as a prompt. The model's output is then compared to the expected REGISTER_CONTENT value (after a simple regex to obtain only the retrieved number from the output of the model). If the model's output matches the expected value, the test is considered successful. If the model's output does not match the expected value, the line in the prompt containing the incorrect output value provided by the model is returned and the mistake is printed out.
 
 The tests are conducted across different values of n, the number of lines in the text file, starting from 500 (roughly 7k tokens) up to 6500 (roughly 97k tokens). The token count is according to anthropic's token_count function. These tests are performed several times (50 in particular for the figures that follow) for each value of n to ensure some statistical validity. You will notice however that even averaging over 50 times, the curves are not very smooth. The success rate, defined as the percentage of correct matches over the total number of tests, is then calculated for each model and each value of n.
 
 
-## Experiment Results
+# Experimental Results
 
 
 
