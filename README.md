@@ -1,4 +1,4 @@
-# The Little Retrieval Test (LRT): Testing the ability of LLMs to retrieve data in ordered and randomly shuffled contexts
+# A Little Retrieval Test for Large Language Models
 
 
 
