@@ -64,7 +64,7 @@ def get_model_response(prompt, model_name):
 def test_model(lines, random_line, model_name):
     prompt_text = f"{anthropic.HUMAN_PROMPT} Here are the file contents:\n" + "".join(lines)[:-1] + f"\n{anthropic.AI_PROMPT}"
     response = get_model_response(prompt_text,model_name)
-    line_num_in_content = int(lines[random_line - 1].split("Go to line ")[1].split(" and")[0])
+    line_num_in_content = int(lines[random_line].split("Go to line ")[1].split(" and")[0])
 
     correct_line = None
     for line in lines:
