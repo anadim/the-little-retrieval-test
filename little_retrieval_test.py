@@ -29,7 +29,7 @@ def generate_and_modify_text_file(filename, n, shuffle_flag, B):
     lines.extend([f"line {i}: REGISTER_CONTENT is <{random.randint(1, 50000)}>\n" for i in line_numbers])
     random_line = random.randint(1, n)
     # add the EXECUTE instruction in random line of the text
-    lines.insert(random_line - 1, f"[EXECUTE THIS]: Go to line {random_line} and report only REGISTER_CONTENT, without any context or additional text, just the number, then EXIT\n")
+    lines.insert(random_line, f"[EXECUTE THIS]: Go to line {random_line} and report only REGISTER_CONTENT, without any context or additional text, just the number, then EXIT\n")
     with open(filename, "w") as f:
         f.writelines(lines)
 
@@ -64,7 +64,7 @@ def get_model_response(prompt, model_name):
 def test_model(lines, random_line, model_name):
     prompt_text = f"{anthropic.HUMAN_PROMPT} Here are the file contents:\n" + "".join(lines)[:-1] + f"\n{anthropic.AI_PROMPT}"
     response = get_model_response(prompt_text,model_name)
-    line_num_in_content = int(lines[random_line - 1].split("Go to line ")[1].split(" and")[0])
+    line_num_in_content = int(lines[random_line].split("Go to line ")[1].split(" and")[0])
 
     correct_line = None
     for line in lines:
